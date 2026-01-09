@@ -100,7 +100,7 @@ const Hero = () => {
 
                 {/* HTML - Center Left */}
                 <div
-                    className="absolute top-[15%] left-[38%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                    className="hidden lg:block absolute top-[15%] left-[38%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
                     style={{ transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)` }}
                 >
                     <IconBrandHtml5 size={32} className="text-orange-500" />
@@ -108,7 +108,7 @@ const Hero = () => {
 
                 {/* CSS - Bottom Left */}
                 <div
-                    className="absolute bottom-[10%] left-[10%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                    className="hidden lg:block absolute bottom-[10%] left-[10%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
                     style={{ transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15}px)` }}
                 >
                     <IconBrandCss3 size={32} className="text-blue-500" />
@@ -116,7 +116,7 @@ const Hero = () => {
 
                 {/* JS - Left of Form */}
                 <div
-                    className="absolute top-[45%] right-[30%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                    className="hidden lg:block absolute top-[45%] right-[30%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
                     style={{ transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * -20}px)` }}
                 >
                     <div className="w-8 h-8 bg-[#F7DF1E] flex items-end justify-center rounded-md overflow-hidden">
