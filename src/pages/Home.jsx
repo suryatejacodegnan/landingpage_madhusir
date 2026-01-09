@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero from '../components/Hero';
 import BootcampDesignedFor from '../components/BootcampDesignedFor';
 import WhatIsBootcamp from '../components/WhatIsBootcamp';
 import WhatYouWillGet from '../components/WhatYouWillGet';
@@ -8,6 +9,9 @@ import Footer from '../components/Footer';
 const Home = () => {
     return (
         <main className="min-h-screen bg-white">
+            {/* Fold 1 - Hero Section */}
+            <Hero />
+
             {/* Fold 2 - Who is this bootcamp designed for? */}
             <BootcampDesignedFor />
 
