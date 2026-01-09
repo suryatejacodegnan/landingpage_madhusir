@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 29.5 29.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="danger">
+<path id="Vector" d="M14.75 11.0625V17.2083" stroke="var(--stroke-0, #DB1B24)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M14.7499 4.18635C15.694 4.18637 16.8625 4.8348 17.8583 6.63069V6.63166L21.4716 13.1336L25.3066 20.0408C26.2323 21.7104 26.1811 23.0093 25.6972 23.8319C25.2135 24.6541 24.1039 25.3289 22.1982 25.3289H14.9023C14.8526 25.3213 14.8018 25.3162 14.7499 25.3162H7.30073C5.3881 25.3161 4.2806 24.6409 3.79878 23.8201C3.31642 22.9984 3.26712 21.6999 4.19331 20.0291L8.02827 13.1209L8.02729 13.1199L11.6416 6.63166V6.63069C12.6374 4.83478 13.8059 4.18635 14.7499 4.18635Z" stroke="var(--stroke-0, #DB1B24)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Vector_3">
+<mask id="path-3-inside-1_16836_554" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.7434 20.8958H14.7544Z"/>
+</mask>
+<path d="M14.7434 18.8958C13.6388 18.8958 12.7434 19.7913 12.7434 20.8958C12.7434 22.0004 13.6388 22.8958 14.7434 22.8958V20.8958V18.8958ZM14.7544 22.8958C15.859 22.8958 16.7544 22.0004 16.7544 20.8958C16.7544 19.7913 15.859 18.8958 14.7544 18.8958V20.8958V22.8958ZM14.7434 20.8958V22.8958H14.7544V20.8958V18.8958H14.7434V20.8958Z" fill="var(--stroke-0, #DB1B24)" mask="url(#path-3-inside-1_16836_554)"/>
+</g>
+<path id="Vector_4" opacity="0" d="M28.5 1V28.5H1V1H28.5Z" stroke="var(--stroke-0, #DB1B24)" stroke-width="2"/>
+</g>
+</svg>
