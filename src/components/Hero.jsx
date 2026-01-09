@@ -20,6 +20,7 @@ import avatar2 from '../assets/e812d0d20f8ce61680973345eaaa4140c7181076.png';
 import avatar3 from '../assets/536f58fcdeadb288782ac9d9ea5a6392286bb79e.png';
 import reactIcon from '../assets/3bb047779562a3e9e50b0c2741e61564112b2da5.png';
 import googleLogo from '../assets/87a82b983e6208b5ef9e1e89d47c6b625d65c1e2.png';
+import googleTrustImage from '../assets/googlenadtrust.png';
 
 const Hero = () => {
     const [formData, setFormData] = useState({
@@ -89,35 +90,12 @@ const Hero = () => {
 
                 {/* Rating Card */}
                 <div
-                    className="absolute bottom-20 left-[36%] z-20 bg-white rounded-2xl p-4 shadow-xl border-4 border-white"
+                    className="absolute bottom-20 left-[36%] z-20"
                     style={{
                         transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)`
                     }}
                 >
-                    <div className="flex flex-col gap-3 items-center">
-                        <div className="relative w-32 h-16">
-                            <div className="absolute left-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 -rotate-6">
-                                <img src={googleLogo} alt="Google" className="w-10 h-10 object-contain" />
-                            </div>
-                            <div className="absolute right-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 rotate-6 flex flex-col items-center">
-                                <div className="text-green-500 text-xl leading-none">★</div>
-                                <span className="text-[8px] text-gray-500 font-medium">Trustpilot</span>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-0.5">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                                <IconStar key={star} size={18} className="text-yellow-400 fill-yellow-400" />
-                            ))}
-                        </div>
-                        <div className="flex items-center gap-2 pt-1">
-                            <div className="flex -space-x-1.5">
-                                <img src={avatar1} alt="" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
-                                <img src={avatar2} alt="" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
-                                <img src={avatar3} alt="" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
-                            </div>
-                            <span className="font-inter font-bold text-xs text-gray-800">4.5K+ Happy Students</span>
-                        </div>
-                    </div>
+                    <img src={googleTrustImage} alt="Rating" className="w-64 drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
                 </div>
             </div>
 
@@ -301,10 +279,7 @@ const Hero = () => {
                                 <span className="font-inter font-medium text-sm text-gray-800">AI Tool Used: GitHub Copilot (VS Code)</span>
                             </div>
 
-                            {/* Floating Icon */}
-                            <div className="absolute -right-16 top-4 bg-white rounded-full p-4 shadow-xl">
-                                <img src={reactIcon} alt="React" className="w-10 h-10" />
-                            </div>
+
                         </div>
                     </div>
 

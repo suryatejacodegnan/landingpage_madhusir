@@ -80,7 +80,7 @@ const WhatIsBootcamp = () => {
     );
 
     return (
-        <section className="bg-white w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-10 md:py-16">
+        <section className="bg-[#F6F5FF] w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-10 md:py-16">
             <div className="w-full flex flex-col gap-10 md:gap-12 lg:gap-14">
                 {/* Header Section */}
                 <div className="flex flex-col gap-3 text-center max-w-4xl mx-auto">

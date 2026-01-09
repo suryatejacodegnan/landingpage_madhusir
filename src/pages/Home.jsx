@@ -15,7 +15,7 @@ import Footer from '../components/Footer';
 // 2 = Optimized mobile (gradient bg, form after heading)
 // 3 = Current Hero.jsx (same as Variant 2 currently)
 // ============================================
-const HERO_VARIANT = 3;
+const HERO_VARIANT = 2;
 
 const Home = () => {
     // Render the selected Hero variant
