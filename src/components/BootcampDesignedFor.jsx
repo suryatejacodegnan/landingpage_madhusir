@@ -17,7 +17,7 @@ const BootcampDesignedFor = () => {
             text: "Beginners with basic knowledge of HTML, CSS, and JavaScript",
         },
         {
-            text: "Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Duis pulvinar.",
+            text: "Learners who want a structured and beginner-friendly learning path",
         },
         {
             text: "Learners who prefer hands-on projects over passive tutorial watching",

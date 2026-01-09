@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     IconCalendar,
     IconClock,
@@ -9,7 +10,10 @@ import {
     IconBrandGithub,
     IconArrowRight,
     IconStar,
-    IconPlayerPlay
+    IconPlayerPlay,
+    IconBrandHtml5,
+    IconBrandCss3,
+    IconBrandJavascript
 } from '@tabler/icons-react';
 
 // Import images
@@ -22,6 +26,7 @@ import googleLogo from '../assets/87a82b983e6208b5ef9e1e89d47c6b625d65c1e2.png';
 import googleTrustImage from '../assets/googlenadtrust.png';
 
 const HeroVariant2 = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -52,7 +57,8 @@ const HeroVariant2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        // Handle form submission
+        // Navigate to Thank You page
+        navigate('/thank-you');
     };
 
     const courseFeatures = [
@@ -79,15 +85,7 @@ const HeroVariant2 = () => {
 
             {/* Floating Elements - Hidden on mobile */}
             <div className="hidden lg:block">
-                {/* Play Button - Top Center */}
-                <div
-                    className="absolute top-20 left-1/2 -translate-x-1/2 z-20 bg-black rounded-full p-4 shadow-xl cursor-pointer hover:scale-110 transition-transform"
-                    style={{
-                        transform: `translate(calc(-50% + ${mousePosition.x * 15}px), ${mousePosition.y * 15}px)`
-                    }}
-                >
-                    <IconPlayerPlay size={24} className="text-white fill-white" />
-                </div>
+
 
                 {/* Rating Card */}
                 <div
@@ -99,6 +97,35 @@ const HeroVariant2 = () => {
                     <img src={googleTrustImage} alt="Rating" className="w-64 drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
                 </div>
             </div>
+
+            {/* Floating Tech Stack Logos - Minimalist */}
+
+            {/* HTML - Top Center Left */}
+            <div
+                className="absolute top-[15%] left-[38%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                style={{ transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)` }}
+            >
+                <IconBrandHtml5 size={32} className="text-orange-500" />
+            </div>
+
+            {/* CSS - Bottom Left */}
+            <div
+                className="absolute bottom-[10%] left-[10%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                style={{ transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15}px)` }}
+            >
+                <IconBrandCss3 size={32} className="text-blue-500" />
+            </div>
+
+            {/* JS - Left of Form */}
+            <div
+                className="absolute top-[45%] right-[30%] z-[5] bg-white rounded-full p-4 shadow-xl opacity-70 hover:opacity-100 transition-opacity"
+                style={{ transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * -20}px)` }}
+            >
+                <div className="w-8 h-8 bg-[#F7DF1E] flex items-end justify-center rounded-md overflow-hidden">
+                    <span className="text-black font-bold text-sm leading-none mb-1 font-sans">JS</span>
+                </div>
+            </div>
+
 
             {/* Content */}
             <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16">
