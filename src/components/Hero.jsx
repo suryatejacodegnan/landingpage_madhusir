@@ -9,7 +9,8 @@ import {
     IconBrandGithub,
     IconArrowRight,
     IconStar,
-    IconPlayerPlay
+    IconPlayerPlay,
+    IconCheck
 } from '@tabler/icons-react';
 
 // Import images
@@ -51,31 +52,32 @@ const Hero = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        // Handle form submission
     };
 
-    const courseFeatures = [
-        { icon: IconClockHour4, text: 'Duration: 5 Days' },
-        { icon: IconDeviceLaptop, text: 'Mode: Live + Hands-On' },
-        { icon: IconUserCheck, text: 'Level: Absolute Beginner' },
-        { icon: IconRocket, text: 'Deployment: Vercel' },
-        { icon: IconBrandGithub, text: 'AI Tool Used: GitHub Copilot (VS Code)' }
+    const highlights = [
+        'Build Real Projects',
+        'Learn React from Scratch',
+        'Deploy Live Apps',
+        'GitHub Copilot Integration'
     ];
 
     return (
         <section className="w-full min-h-screen relative overflow-hidden">
-            {/* Background Image */}
+            {/* Background - Dark gradient on mobile, Image on desktop */}
             <div className="absolute inset-0 z-0">
+                {/* Dark gradient for mobile */}
+                <div className="lg:hidden absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900" />
+                {/* Image for desktop */}
                 <img
                     src={bgImage}
                     alt=""
-                    className="w-full h-full object-cover"
+                    className="hidden lg:block w-full h-full object-cover"
                 />
             </div>
 
-            {/* Floating Elements - Hidden on mobile */}
+            {/* Floating Elements - Desktop only */}
             <div className="hidden lg:block">
-                {/* Play Button - Top Center */}
+                {/* Play Button */}
                 <div
                     className="absolute top-20 left-1/2 -translate-x-1/2 z-20 bg-black rounded-full p-4 shadow-xl cursor-pointer hover:scale-110 transition-transform"
                     style={{
@@ -85,7 +87,7 @@ const Hero = () => {
                     <IconPlayerPlay size={24} className="text-white fill-white" />
                 </div>
 
-                {/* Combined Rating Card - Center */}
+                {/* Rating Card */}
                 <div
                     className="absolute bottom-20 left-[36%] z-20 bg-white rounded-2xl p-4 shadow-xl border-4 border-white"
                     style={{
@@ -93,31 +95,20 @@ const Hero = () => {
                     }}
                 >
                     <div className="flex flex-col gap-3 items-center">
-                        {/* Overlapping Logo Cards */}
                         <div className="relative w-32 h-16">
-                            {/* Google Card - Left, tilted */}
-                            <div
-                                className="absolute left-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 -rotate-6"
-                            >
+                            <div className="absolute left-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 -rotate-6">
                                 <img src={googleLogo} alt="Google" className="w-10 h-10 object-contain" />
                             </div>
-                            {/* Trustpilot Card - Right, tilted */}
-                            <div
-                                className="absolute right-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 rotate-6 flex flex-col items-center"
-                            >
+                            <div className="absolute right-0 top-0 bg-white rounded-xl p-2.5 shadow-md border border-gray-100 rotate-6 flex flex-col items-center">
                                 <div className="text-green-500 text-xl leading-none">★</div>
                                 <span className="text-[8px] text-gray-500 font-medium">Trustpilot</span>
                             </div>
                         </div>
-
-                        {/* Stars */}
                         <div className="flex items-center gap-0.5">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <IconStar key={star} size={18} className="text-yellow-400 fill-yellow-400" />
                             ))}
                         </div>
-
-                        {/* Happy Students */}
                         <div className="flex items-center gap-2 pt-1">
                             <div className="flex -space-x-1.5">
                                 <img src={avatar1} alt="" className="w-6 h-6 rounded-full border-2 border-white object-cover" />
@@ -130,121 +121,211 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* MOBILE LAYOUT - Centered, Form First */}
+            <div className="lg:hidden relative z-10 w-full px-4 py-8">
+                <div className="flex flex-col items-center text-center gap-6 max-w-md mx-auto">
 
-                    {/* Left Section - Content */}
+                    {/* Date Badge */}
+                    <div className="inline-flex">
+                        <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                            <div className="flex items-center gap-1.5">
+                                <IconCalendar size={16} className="text-white" />
+                                <span className="font-inter text-sm text-white">14-19 Feb 2026</span>
+                            </div>
+                            <span className="text-white/40">|</span>
+                            <div className="flex items-center gap-1.5">
+                                <IconClock size={16} className="text-white" />
+                                <span className="font-inter text-sm text-white">10:00 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Heading */}
+                    <div className="flex flex-col gap-3">
+                        <h1 className="font-inter font-bold text-3xl sm:text-4xl leading-tight text-white">
+                            <span className="text-yellow-400">5-Day</span> React.js
+                            <br />
+                            Bootcamp
+                        </h1>
+                        <p className="font-inter text-sm text-white/80">
+                            Learn to build & deploy React apps from scratch
+                        </p>
+                    </div>
+
+                    {/* Student Avatars */}
+                    <div className="flex items-center gap-2">
+                        <div className="flex -space-x-2">
+                            <img src={avatar1} alt="" className="w-8 h-8 rounded-full border-2 border-purple-600 object-cover" />
+                            <img src={avatar2} alt="" className="w-8 h-8 rounded-full border-2 border-purple-600 object-cover" />
+                            <img src={avatar3} alt="" className="w-8 h-8 rounded-full border-2 border-purple-600 object-cover" />
+                        </div>
+                        <div className="flex items-center gap-1">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <IconStar key={star} size={12} className="text-yellow-400 fill-yellow-400" />
+                            ))}
+                        </div>
+                        <span className="font-inter font-semibold text-xs text-white">4.5K+ Students</span>
+                    </div>
+
+                    {/* Registration Form - Full Width on Mobile */}
+                    <div className="w-full bg-white rounded-2xl p-5 shadow-2xl">
+                        <h3 className="font-inter font-bold text-lg text-gray-900 mb-1">
+                            Register Now
+                        </h3>
+                        <p className="font-inter text-xs text-gray-500 mb-4">
+                            Limited seats available • Starting ₹199
+                        </p>
+
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                            <input
+                                type="text"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleInputChange}
+                                placeholder="Full Name"
+                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white"
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                placeholder="Email Address"
+                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white"
+                            />
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                placeholder="Phone Number"
+                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white"
+                            />
+                            <button
+                                type="submit"
+                                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-inter font-bold text-base py-4 rounded-xl shadow-lg transition-all"
+                            >
+                                Secure My Spot - ₹199
+                            </button>
+                        </form>
+                    </div>
+
+                    {/* Highlights */}
+                    <div className="grid grid-cols-2 gap-2 w-full">
+                        {highlights.map((item, index) => (
+                            <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                                <IconCheck size={14} className="text-green-400 flex-shrink-0" />
+                                <span className="font-inter text-xs text-white">{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* DESKTOP LAYOUT - Original two-column */}
+            <div className="hidden lg:block relative z-10 w-full px-20 py-16">
+                <div className="flex flex-row gap-12 items-start">
+
+                    {/* Left Content */}
                     <div className="flex-1 flex flex-col gap-5">
-                        {/* Date and Time Badge - Single dark pill */}
+                        {/* Date Badge */}
                         <div className="inline-flex self-start">
                             <div className="flex items-center gap-6 bg-[#151515] rounded-full px-6 py-3">
                                 <div className="flex items-center gap-2">
                                     <IconCalendar size={20} className="text-white" />
-                                    <span className="font-inter font-normal text-base text-white">14 to 19 Feb 2026</span>
+                                    <span className="font-inter text-base text-white">14 to 19 Feb 2026</span>
                                 </div>
                                 <span className="text-white/50">|</span>
                                 <div className="flex items-center gap-2">
                                     <IconClock size={20} className="text-white" />
-                                    <span className="font-inter font-normal text-base text-white">10:00 AM</span>
+                                    <span className="font-inter text-base text-white">10:00 AM</span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Happy Students */}
+                        {/* Students */}
                         <div className="flex items-center gap-3">
                             <div className="flex -space-x-2">
-                                <img src={avatar1} alt="Student" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
-                                <img src={avatar2} alt="Student" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
-                                <img src={avatar3} alt="Student" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
-                                <img src={avatar1} alt="Student" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                                <img src={avatar1} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                                <img src={avatar2} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                                <img src={avatar3} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
+                                <img src={avatar1} alt="" className="w-9 h-9 rounded-full border-2 border-white object-cover" />
                             </div>
-                            <span className="font-inter font-bold text-base text-gray-900">
-                                4.5K+ happy Students
-                            </span>
+                            <span className="font-inter font-bold text-base text-gray-900">4.5K+ happy Students</span>
                         </div>
 
-                        {/* Main Heading */}
+                        {/* Heading */}
                         <div className="flex flex-col gap-3">
-                            <h1 className="font-inter font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight text-black">
+                            <h1 className="font-inter font-semibold text-6xl leading-tight text-black">
                                 <span className="text-purple-600">5-Day</span> Beginner
                                 <br />
                                 <span className="text-purple-600">React.js</span> Bootcamp
                             </h1>
-                            <p className="font-inter font-normal text-lg text-gray-600 max-w-lg">
+                            <p className="font-inter text-lg text-gray-600 max-w-lg">
                                 A hands-on React bootcamp designed for absolute beginners to confidently build, deploy, and understand modern React applications in just 5 days.
                             </p>
                         </div>
 
-                        {/* Features Link - In a pill badge */}
+                        {/* Features Pill */}
                         <div className="inline-flex self-start">
                             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-200">
-                                <span className="font-inter font-medium text-sm text-purple-600">
-                                    Build Real Projects
-                                </span>
+                                <span className="font-inter font-medium text-sm text-purple-600">Build Real Projects</span>
                                 <span className="text-purple-400">•</span>
-                                <span className="font-inter font-medium text-sm text-purple-600">
-                                    Learn React from Scratch
-                                </span>
+                                <span className="font-inter font-medium text-sm text-purple-600">Learn React from Scratch</span>
                                 <span className="text-purple-400">•</span>
-                                <span className="font-inter font-medium text-sm text-purple-600">
-                                    Deploy Live Apps
-                                </span>
+                                <span className="font-inter font-medium text-sm text-purple-600">Deploy Live Apps</span>
                                 <IconArrowRight size={16} className="text-purple-600" />
                             </div>
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center gap-4">
-                            <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-base py-3 px-8 rounded-lg shadow-lg hover:shadow-xl">
-                                Register Now
-                            </button>
-                            <span className="font-inter font-semibold text-xl text-purple-600">
-                                ₹199 Only...
-                            </span>
-                        </div>
-
-                        {/* Course Features List with floating icon */}
+                        {/* Course Features */}
                         <div className="relative flex flex-col gap-3 mt-2">
-                            {courseFeatures.map((feature, index) => (
-                                <div key={index} className="flex items-center gap-3">
-                                    <feature.icon size={20} className="text-purple-600 flex-shrink-0" />
-                                    <span className="font-inter font-medium text-sm text-gray-800">
-                                        {feature.text}
-                                    </span>
-                                </div>
-                            ))}
+                            <div className="flex items-center gap-3">
+                                <IconClockHour4 size={20} className="text-purple-600" />
+                                <span className="font-inter font-medium text-sm text-gray-800">Duration: 5 Days</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <IconDeviceLaptop size={20} className="text-purple-600" />
+                                <span className="font-inter font-medium text-sm text-gray-800">Mode: Live + Hands-On</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <IconUserCheck size={20} className="text-purple-600" />
+                                <span className="font-inter font-medium text-sm text-gray-800">Level: Absolute Beginner</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <IconRocket size={20} className="text-purple-600" />
+                                <span className="font-inter font-medium text-sm text-gray-800">Deployment: Vercel</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <IconBrandGithub size={20} className="text-purple-600" />
+                                <span className="font-inter font-medium text-sm text-gray-800">AI Tool Used: GitHub Copilot (VS Code)</span>
+                            </div>
 
-                            {/* Floating HTML5/React Icon */}
-                            <div className="hidden md:block absolute -right-16 top-4 bg-white rounded-full p-4 shadow-xl">
+                            {/* Floating Icon */}
+                            <div className="absolute -right-16 top-4 bg-white rounded-full p-4 shadow-xl">
                                 <img src={reactIcon} alt="React" className="w-10 h-10" />
                             </div>
                         </div>
                     </div>
 
-
-
-                    {/* Right Section - Registration Form */}
-                    <div className="w-full lg:w-[26rem] lg:flex-shrink-0">
+                    {/* Right Form */}
+                    <div className="w-[26rem] flex-shrink-0">
                         <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 relative">
-                            {/* Floating React Icon */}
                             <div className="absolute -top-4 -right-4 bg-white rounded-full p-3 shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
                                 <img src={reactIcon} alt="React" className="w-8 h-8" />
                             </div>
 
-                            {/* Form Header */}
                             <div className="flex flex-col gap-2 mb-5 pr-8">
-                                <h3 className="font-inter font-bold text-xl md:text-2xl text-black leading-tight">
+                                <h3 className="font-inter font-bold text-2xl text-black leading-tight">
                                     Register & Start Your
                                     <br />
                                     Learning Journey
                                 </h3>
-                                <p className="font-inter font-normal text-sm text-gray-500 leading-relaxed">
-                                    Complete the form to secure your spot. Our team will contact you with course details, orientation steps, and next actions.
+                                <p className="font-inter text-sm text-gray-500">
+                                    Complete the form to secure your spot.
                                 </p>
                             </div>
 
-                            {/* Form */}
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                                 <div className="flex flex-col gap-1.5">
                                     <label className="font-inter font-medium text-sm text-gray-700">Full Name</label>
@@ -254,10 +335,9 @@ const Hero = () => {
                                         value={formData.fullName}
                                         onChange={handleInputChange}
                                         placeholder="Enter Your Name"
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     />
                                 </div>
-
                                 <div className="flex flex-col gap-1.5">
                                     <label className="font-inter font-medium text-sm text-gray-700">Email</label>
                                     <input
@@ -266,22 +346,20 @@ const Hero = () => {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         placeholder="Enter Your Email"
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     />
                                 </div>
-
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-inter font-medium text-sm text-gray-700">Phone. No.</label>
+                                    <label className="font-inter font-medium text-sm text-gray-700">Phone No.</label>
                                     <input
                                         type="tel"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         placeholder="Enter Your Ph. No."
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     />
                                 </div>
-
                                 <div className="flex flex-col gap-1.5">
                                     <label className="font-inter font-medium text-sm text-gray-700">College Name</label>
                                     <input
@@ -290,10 +368,9 @@ const Hero = () => {
                                         value={formData.collegeName}
                                         onChange={handleInputChange}
                                         placeholder="Enter Your College Name"
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     />
                                 </div>
-
                                 <div className="flex flex-col gap-1.5">
                                     <label className="font-inter font-medium text-sm text-gray-700">Passout Year</label>
                                     <input
@@ -302,13 +379,12 @@ const Hero = () => {
                                         value={formData.passoutYear}
                                         onChange={handleInputChange}
                                         placeholder="Enter"
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg font-inter text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     />
                                 </div>
-
                                 <button
                                     type="submit"
-                                    className="w-full bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-base py-4 rounded-xl mt-2 shadow-lg"
+                                    className="w-full bg-purple-600 hover:bg-purple-700 text-white font-inter font-semibold text-base py-4 rounded-xl mt-2 shadow-lg"
                                 >
                                     Secure My Spot by ₹199
                                 </button>
