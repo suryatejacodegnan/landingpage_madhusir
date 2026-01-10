@@ -40,16 +40,16 @@ const BootcampDesignedFor = () => {
                 {/* Content Card with Border */}
                 <div className="bg-white border border-gray-200 rounded-xl px-3 py-5 flex flex-col gap-3">
                     <div className="flex flex-col gap-2.5">
-                        <h2 className="font-inter font-bold text-2xl leading-8 text-black">
+                        <h2 className="font-inter font-semibold text-2xl leading-tight text-black">
                             Who is this bootcamp designed for?
                         </h2>
-                        <p className="font-inter font-medium text-xs leading-[18px] text-[#535862]">
+                        <p className="font-inter font-normal text-base leading-6 text-gray-600">
                             This beginner-friendly React.js bootcamp is designed for learners who want a clear and structured start in frontend development. It focuses on building practical skills and real-world project experience rather than just learning theory.
                         </p>
                     </div>
 
                     {/* CTA Button */}
-                    <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-xs leading-[18px] py-3 px-5 rounded-lg w-fit shadow-md">
+                    <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-sm leading-6 py-3 px-5 rounded-lg w-fit shadow-md">
                         Join the React Bootcamp
                     </button>
                 </div>
@@ -62,7 +62,7 @@ const BootcampDesignedFor = () => {
                             className="bg-white border border-gray-200 rounded-xl px-3 py-4 flex gap-3 items-start"
                         >
                             <IconCircleCheckFilled size={20} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                            <p className="font-inter font-medium text-xs leading-[18px] text-black">
+                            <p className="font-inter font-medium text-sm leading-6 text-black">
                                 {point.text}
                             </p>
                         </div>

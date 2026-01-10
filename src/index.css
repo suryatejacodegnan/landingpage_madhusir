@@ -11,3 +11,44 @@ body {
 .font-inter {
   font-family: 'Inter', sans-serif;
 }
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Auto-scroll animation for testimonials (right to left) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll animation with GPU acceleration to prevent reset */
+.animate-scroll-left {
+  animation: scroll-left 4s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (min-width: 640px) {
+  .animate-scroll-left {
+    animation: scroll-left 6s linear infinite;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animate-scroll-left {
+    animation: scroll-left 15s linear infinite;
+  }
+}

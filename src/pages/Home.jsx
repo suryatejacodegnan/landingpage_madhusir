@@ -5,6 +5,7 @@ import HeroVariant2 from '../components/HeroVariant2';
 import BootcampDesignedFor from '../components/BootcampDesignedFor';
 import WhatIsBootcamp from '../components/WhatIsBootcamp';
 import WhatYouWillGet from '../components/WhatYouWillGet';
+import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
@@ -45,6 +46,9 @@ const Home = () => {
             {/* Fold 4 - What You Will Get */}
             <WhatYouWillGet />
 
+            {/* Fold 5 - Testimonials */}
+            <Testimonials />
+
             {/* Fold 6 - FAQ */}
             <FAQ />
 
@@ -55,3 +59,4 @@ const Home = () => {
 };
 
 export default Home;
+
