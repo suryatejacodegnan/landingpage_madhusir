@@ -25,10 +25,55 @@ const BootcampDesignedFor = () => {
     ];
 
     return (
-        <section className="bg-white w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-10 md:py-16">
-            <div className="w-full max-w-7xl flex flex-col gap-8 md:gap-12 lg:gap-16">
+        <section className="bg-white w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-6 md:py-16">
+            {/* ===== MOBILE LAYOUT (matches Figma design) ===== */}
+            <div className="lg:hidden w-full max-w-md flex flex-col gap-4">
+                {/* Hero Image - Rounded on Mobile */}
+                <div className="w-full h-[163px] relative rounded-md overflow-hidden">
+                    <img
+                        src={heroImage}
+                        alt="Codegnan React Bootcamp classroom"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+
+                {/* Content Card with Border */}
+                <div className="bg-white border border-gray-200 rounded-xl px-3 py-5 flex flex-col gap-3">
+                    <div className="flex flex-col gap-2.5">
+                        <h2 className="font-inter font-bold text-2xl leading-8 text-black">
+                            Who is this bootcamp designed for?
+                        </h2>
+                        <p className="font-inter font-medium text-xs leading-[18px] text-[#535862]">
+                            This beginner-friendly React.js bootcamp is designed for learners who want a clear and structured start in frontend development. It focuses on building practical skills and real-world project experience rather than just learning theory.
+                        </p>
+                    </div>
+
+                    {/* CTA Button */}
+                    <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-xs leading-[18px] py-3 px-5 rounded-lg w-fit shadow-md">
+                        Join the React Bootcamp
+                    </button>
+                </div>
+
+                {/* Audience Points - Individual Cards */}
+                <div className="flex flex-col gap-3">
+                    {audiencePoints.map((point, index) => (
+                        <div
+                            key={index}
+                            className="bg-white border border-gray-200 rounded-xl px-3 py-4 flex gap-3 items-start"
+                        >
+                            <IconCircleCheckFilled size={20} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                            <p className="font-inter font-medium text-xs leading-[18px] text-black">
+                                {point.text}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* ===== DESKTOP LAYOUT (unchanged - already approved) ===== */}
+            <div className="hidden lg:flex w-full max-w-7xl flex-col gap-12 lg:gap-16">
                 {/* Hero Image */}
-                <div className="w-full aspect-video relative rounded-xl md:rounded-2xl overflow-hidden">
+                <div className="w-full aspect-video relative rounded-2xl overflow-hidden">
                     <img
                         src={heroImage}
                         alt="Codegnan React Bootcamp classroom"
@@ -37,30 +82,30 @@ const BootcampDesignedFor = () => {
                 </div>
 
                 {/* Content Block */}
-                <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
+                <div className="flex flex-row gap-16 items-start">
                     {/* Left Column - Text Content */}
-                    <div className="flex flex-col gap-6 md:gap-8 w-full lg:w-2/5">
-                        <div className="flex flex-col gap-2 md:gap-3">
-                            <h2 className="font-inter font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-black">
+                    <div className="flex flex-col gap-8 w-2/5">
+                        <div className="flex flex-col gap-3">
+                            <h2 className="font-inter font-semibold text-5xl leading-tight tracking-tight text-black">
                                 Who is this bootcamp designed for?
                             </h2>
-                            <p className="font-inter font-normal text-base sm:text-lg md:text-xl leading-6 md:leading-7 text-gray-600">
+                            <p className="font-inter font-normal text-xl leading-7 text-gray-600">
                                 This beginner-friendly React.js bootcamp is designed for learners who want a clear and structured start in frontend development. It focuses on building practical skills and real-world project experience rather than just learning theory.
                             </p>
                         </div>
 
                         {/* CTA Button */}
-                        <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-extrabold text-sm sm:text-base leading-6 py-3 sm:py-4 px-6 sm:px-8 rounded-xl w-full sm:w-fit shadow-lg hover:shadow-xl">
+                        <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-extrabold text-base leading-6 py-4 px-8 rounded-xl w-fit shadow-lg hover:shadow-xl">
                             Join the React Bootcamp
                         </button>
                     </div>
 
                     {/* Right Column - Audience Points */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-4 sm:gap-y-6 w-full lg:w-3/5">
+                    <div className="grid grid-cols-2 gap-x-16 gap-y-6 w-3/5">
                         {audiencePoints.map((point, index) => (
                             <div key={index} className="flex gap-3 items-start">
                                 <IconCircleCheckFilled size={24} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                                <p className="font-inter font-semibold text-sm sm:text-base leading-5 sm:leading-6 text-black">
+                                <p className="font-inter font-semibold text-base leading-6 text-black">
                                     {point.text}
                                 </p>
                             </div>
