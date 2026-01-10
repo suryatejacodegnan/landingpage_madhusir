@@ -76,7 +76,7 @@ const Testimonials = () => {
     const testimonials = useMemo(() => [
         {
             name: "Deepakk Udarapu",
-            role: "Information Technology from VRSEC",
+            role: "Frontend Intern",
             text: "I had learn about Web programming, build frontend websites with HTML, CSS Bootstrap, JS GitHub and Vercel. Special thanks to Ravi Siva Ram Tej sir & Saketh sir from Vijayawada Codegnan team for teachings.",
             source: "google"
         },
@@ -88,13 +88,13 @@ const Testimonials = () => {
         },
         {
             name: "Hiranmaye Tanuku",
-            role: "Frontend Developer",
+            role: "Web Developer",
             text: "I had a very great learning experience at Codegnan. Mentors are very approachable & clear our doubts. The projects gave me good hands-on knowledge. I had learnt a lot in these three days workshop. Special thanks to siva ram teja sir.",
             source: "google"
         },
         {
             name: "Sai Kiran Reddy",
-            role: "Frontend Developer",
+            role: "UI Developer",
             text: "I had an excellent learning experience during the three-day web development workshop conducted by Ravi Siva Ram Teja Nagulavaricha sir from Codegnan. I had an excellent learning experience during the three-day web development workshop",
             source: "google"
         },
@@ -106,19 +106,19 @@ const Testimonials = () => {
         },
         {
             name: "Ashraf Baig",
-            role: "Frontend Developer",
+            role: "Junior Frontend Developer",
             text: "Codegnan 3days workshop had done.In this three days we learn about css, javascript, html, bootstrap. The Siva ram sir, were patient and supportive, Making complex concepts accessible and engaging. This session is mentor by",
             source: "google"
         },
         {
             name: "Rushaswi Gundapaneni",
-            role: "Frontend Developer",
+            role: "React Developer",
             text: "In our college they held a workshop about frontend by siva ram teja sir. It is very helpful for me and my friends and I learnt more about Github. I highly recommend it to anyone looking to build a strong foundation in web development.",
             source: "google"
         },
         {
             name: "Dhakshaini Chennu",
-            role: "Frontend Developer",
+            role: "Web Developer",
             text: "Over the three days, we learned HTML, CSS, and JavaScript, web pages, making them responsive, & Random Password Generator and a Weather Application. The sessions were practical thanks to Ravi Siva Ram Teja Sir, Saketh Kallepu sir",
             source: "google"
         },
