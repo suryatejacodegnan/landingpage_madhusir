@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
         credentials: true,
       },
       allowedHosts: [
+        'youth-metropolitan-does-intimate.trycloudflare.com', // Active Cloudflare Tunnel
         'flight-generic-andreas-alternatives.trycloudflare.com', // Explicitly allow current tunnel
         '.trycloudflare.com',
         'localhost',

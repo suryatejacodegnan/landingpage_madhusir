@@ -24,12 +24,28 @@ const BootcampDesignedFor = () => {
         },
     ];
 
+    const scrollToForm = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Focus input after scroll
+        setTimeout(() => {
+            const mobileInput = document.querySelector('#registration-form input[name="fullName"]');
+            const desktopInput = document.querySelector('#registration-form-desktop input[name="fullName"]');
+
+            if (mobileInput && getComputedStyle(document.getElementById('registration-form')).display !== 'none') {
+                mobileInput.focus();
+            } else if (desktopInput) {
+                desktopInput.focus();
+            }
+        }, 1000);
+    };
+
     return (
         <section className="bg-white w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-6 md:py-16">
             {/* ===== MOBILE LAYOUT (matches Figma design) ===== */}
             <div className="lg:hidden w-full max-w-md flex flex-col gap-4">
                 {/* Hero Image - Rounded on Mobile */}
-                <div className="w-full h-[163px] relative rounded-md overflow-hidden">
+                <div className="w-full h-40 relative rounded-md overflow-hidden">
                     <img
                         src={heroImage}
                         alt="Codegnan React Bootcamp classroom"
@@ -49,7 +65,10 @@ const BootcampDesignedFor = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-semibold text-sm leading-6 py-3 px-5 rounded-lg w-fit shadow-md">
+                    <button
+                        onClick={scrollToForm}
+                        className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-bold text-sm leading-6 py-3 px-6 rounded-xl w-fit shadow-lg hover:shadow-xl"
+                    >
                         Join the React Bootcamp
                     </button>
                 </div>
@@ -95,7 +114,10 @@ const BootcampDesignedFor = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <button className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-extrabold text-base leading-6 py-4 px-8 rounded-xl w-fit shadow-lg hover:shadow-xl">
+                        <button
+                            onClick={scrollToForm}
+                            className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-extrabold text-base leading-6 py-4 px-8 rounded-xl w-fit shadow-lg hover:shadow-xl"
+                        >
                             Join the React Bootcamp
                         </button>
                     </div>

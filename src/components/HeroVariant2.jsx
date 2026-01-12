@@ -57,8 +57,9 @@ const HeroVariant2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        // Navigate to Thank You page
-        navigate('/thank-you');
+        // Navigate to Razorpay link
+        // REPLACE THIS WITH ACTUAL RAZORPAY LINK
+        window.location.href = 'https://razorpay.com';
     };
 
     const courseFeatures = [
@@ -174,7 +175,7 @@ const HeroVariant2 = () => {
                         </div>
 
                         {/* Mobile Form - Shows only on mobile, after heading */}
-                        <div className="lg:hidden w-full">
+                        <div id="registration-form" className="lg:hidden w-full">
                             <div className="bg-white rounded-xl p-4 shadow-xl border border-gray-100 relative">
                                 {/* Floating React Icon */}
                                 <div className="absolute -top-3 -right-3 bg-white rounded-full p-2 shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
@@ -281,7 +282,7 @@ const HeroVariant2 = () => {
 
                     {/* Right Section - Registration Form (Desktop only) */}
                     <div className="hidden lg:block w-full lg:w-[26rem] lg:flex-shrink-0">
-                        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl border border-gray-100 relative">
+                        <div id="registration-form-desktop" className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl border border-gray-100 relative">
                             {/* Floating React Icon */}
                             <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white rounded-full p-2 sm:p-3 shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
                                 <img src={reactIcon} alt="React" className="w-6 h-6 sm:w-8 sm:h-8" />

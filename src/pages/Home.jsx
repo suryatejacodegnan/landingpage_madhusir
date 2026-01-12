@@ -8,6 +8,8 @@ import WhatYouWillGet from '../components/WhatYouWillGet';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
+import MobileSectionCTA from '../components/MobileSectionCTA';
 
 // ============================================
 // HERO VARIANT SELECTOR
@@ -33,27 +35,34 @@ const Home = () => {
     };
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-white pb-20 lg:pb-0"> {/* Added pb-20 for sticky footer space */}
             {/* Fold 1 - Hero Section */}
             {renderHero()}
 
             {/* Fold 2 - Who is this bootcamp designed for? */}
             <BootcampDesignedFor />
 
+
             {/* Fold 3 - What is this Bootcamp? */}
             <WhatIsBootcamp />
 
+
             {/* Fold 4 - What You Will Get */}
             <WhatYouWillGet />
+            {/* Optimized: No CTA here to vary rhythm */}
 
             {/* Fold 5 - Testimonials */}
             <Testimonials />
+
 
             {/* Fold 6 - FAQ */}
             <FAQ />
 
             {/* Footer */}
             <Footer />
+
+            {/* Sticky Mobile Footer */}
+            <MobileStickyFooter />
         </main>
     );
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { IconArrowRight } from '@tabler/icons-react';
 
 // Import custom images
 import doubleQuotesImg from '../assets/doublequotes.png';
@@ -232,7 +233,33 @@ const Testimonials = () => {
                     </div>
                 </div>
             </div>
-        </section>
+
+
+            {/* Integrated CTA Button */}
+            <div className="w-full flex justify-center mt-4 sm:mt-6 md:mt-8">
+                <button
+                    onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                        // Focus input after scroll
+                        setTimeout(() => {
+                            const mobileInput = document.querySelector('#registration-form input[name="fullName"]');
+                            const desktopInput = document.querySelector('#registration-form-desktop input[name="fullName"]');
+
+                            if (mobileInput && getComputedStyle(document.getElementById('registration-form')).display !== 'none') {
+                                mobileInput.focus();
+                            } else if (desktopInput) {
+                                desktopInput.focus();
+                            }
+                        }, 1000);
+                    }}
+                    className="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-colors text-white font-inter font-bold text-sm py-3 px-6 rounded-xl w-fit shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                >
+                    Register for Bootcamp
+                    <IconArrowRight size={18} />
+                </button>
+            </div>
+        </section >
     );
 };
 

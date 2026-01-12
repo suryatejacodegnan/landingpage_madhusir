@@ -52,3 +52,44 @@ body {
     animation: scroll-left 15s linear infinite;
   }
 }
+
+/* DPI/Zoom normalization – cover dppx, dpi, and -webkit DPR */
+@media (min-resolution: 1.1dppx),
+(min-resolution: 106dpi),
+(-webkit-min-device-pixel-ratio: 1.1) {
+  :root {
+    font-size: 90%;
+  }
+}
+
+@media (min-resolution: 1.25dppx),
+(min-resolution: 120dpi),
+(-webkit-min-device-pixel-ratio: 1.25) {
+  :root {
+    font-size: 85%;
+  }
+}
+
+@media (min-resolution: 1.33dppx),
+(min-resolution: 128dpi),
+(-webkit-min-device-pixel-ratio: 1.33) {
+  :root {
+    font-size: 85%;
+  }
+}
+
+@media (min-resolution: 1.4dppx),
+(min-resolution: 134dpi),
+(-webkit-min-device-pixel-ratio: 1.4) {
+  :root {
+    font-size: 82.5%;
+  }
+}
+
+@media (min-resolution: 1.5dppx),
+(min-resolution: 144dpi),
+(-webkit-min-device-pixel-ratio: 1.5) {
+  :root {
+    font-size: 70%;
+  }
+}
