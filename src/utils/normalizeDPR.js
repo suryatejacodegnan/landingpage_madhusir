@@ -1,5 +1,11 @@
 export function normalizeRootFontByDPR() {
     try {
+        // Only apply for lg screens and up (1024px)
+        if (window.innerWidth < 1024) {
+            document.documentElement.style.fontSize = '100%';
+            return;
+        }
+
         const dpr = window.devicePixelRatio || 1;
         let size = 100;
         if (dpr >= 1.5) size = 70;

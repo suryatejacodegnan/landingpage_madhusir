@@ -2,94 +2,94 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom utilities */
 .font-inter {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Hide scrollbar for horizontal scroll */
 .scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Auto-scroll animation for testimonials (right to left) */
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
 
-  100% {
-    transform: translateX(-50%);
-  }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Scroll animation with GPU acceleration to prevent reset */
 .animate-scroll-left {
-  animation: scroll-left 4s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+    animation: scroll-left 4s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 @media (min-width: 640px) {
-  .animate-scroll-left {
-    animation: scroll-left 6s linear infinite;
-  }
+    .animate-scroll-left {
+        animation: scroll-left 6s linear infinite;
+    }
 }
 
 @media (min-width: 1024px) {
-  .animate-scroll-left {
-    animation: scroll-left 15s linear infinite;
-  }
+    .animate-scroll-left {
+        animation: scroll-left 15s linear infinite;
+    }
 }
 
-/* DPI/Zoom normalization – cover dppx, dpi, and -webkit DPR */
-@media (min-resolution: 1.1dppx),
-(min-resolution: 106dpi),
-(-webkit-min-device-pixel-ratio: 1.1) {
-  :root {
-    font-size: 90%;
-  }
+/* DPI/Zoom normalization – cover dppx, dpi, and -webkit DPR - ONLY FOR DESKTOP (lg+) */
+@media (min-width: 1024px) and (min-resolution: 1.1dppx),
+(min-width: 1024px) and (min-resolution: 106dpi),
+(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.1) {
+    :root {
+        font-size: 90%;
+    }
 }
 
-@media (min-resolution: 1.25dppx),
-(min-resolution: 120dpi),
-(-webkit-min-device-pixel-ratio: 1.25) {
-  :root {
-    font-size: 85%;
-  }
+@media (min-width: 1024px) and (min-resolution: 1.25dppx),
+(min-width: 1024px) and (min-resolution: 120dpi),
+(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.25) {
+    :root {
+        font-size: 85%;
+    }
 }
 
-@media (min-resolution: 1.33dppx),
-(min-resolution: 128dpi),
-(-webkit-min-device-pixel-ratio: 1.33) {
-  :root {
-    font-size: 85%;
-  }
+@media (min-width: 1024px) and (min-resolution: 1.33dppx),
+(min-width: 1024px) and (min-resolution: 128dpi),
+(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.33) {
+    :root {
+        font-size: 85%;
+    }
 }
 
-@media (min-resolution: 1.4dppx),
-(min-resolution: 134dpi),
-(-webkit-min-device-pixel-ratio: 1.4) {
-  :root {
-    font-size: 82.5%;
-  }
+@media (min-width: 1024px) and (min-resolution: 1.4dppx),
+(min-width: 1024px) and (min-resolution: 134dpi),
+(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.4) {
+    :root {
+        font-size: 82.5%;
+    }
 }
 
-@media (min-resolution: 1.5dppx),
-(min-resolution: 144dpi),
-(-webkit-min-device-pixel-ratio: 1.5) {
-  :root {
-    font-size: 70%;
-  }
+@media (min-width: 1024px) and (min-resolution: 1.5dppx),
+(min-width: 1024px) and (min-resolution: 144dpi),
+(min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    :root {
+        font-size: 70%;
+    }
 }
