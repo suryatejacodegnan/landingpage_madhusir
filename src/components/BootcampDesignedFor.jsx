@@ -41,9 +41,9 @@ const BootcampDesignedFor = () => {
     };
 
     return (
-        <section className="bg-white w-full flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-28 py-6 md:py-16">
+        <section className="bg-white w-full flex flex-col items-center px-4 lg:px-28 py-6 md:py-16">
             {/* ===== MOBILE LAYOUT (matches Figma design) ===== */}
-            <div className="lg:hidden w-full max-w-md flex flex-col gap-4">
+            <div className="lg:hidden w-full flex flex-col gap-4">
                 {/* Hero Image - Rounded on Mobile */}
                 <div className="w-full h-40 relative rounded-md overflow-hidden">
                     <img

@@ -130,12 +130,12 @@ const HeroVariant2 = () => {
 
             {/* Content */}
             <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16">
-                <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start md:items-center lg:items-start">
 
                     {/* Left Section - Content */}
-                    <div className="flex-1 flex flex-col gap-4 sm:gap-5">
+                    <div className="flex-1 flex flex-col gap-4 sm:gap-5 md:w-full md:items-center md:text-center lg:w-auto lg:items-start lg:text-left">
                         {/* Date and Time Badge - Single dark pill */}
-                        <div className="inline-flex self-start">
+                        <div className="inline-flex self-start md:self-center lg:self-start">
                             <div className="flex flex-wrap items-center gap-3 sm:gap-6 bg-[#151515] rounded-full px-4 sm:px-6 py-2.5 sm:py-3">
                                 <div className="flex items-center gap-1.5 sm:gap-2">
                                     <IconCalendar size={18} className="text-white sm:w-5 sm:h-5" />
@@ -163,19 +163,19 @@ const HeroVariant2 = () => {
                         </div>
 
                         {/* Main Heading */}
-                        <div className="flex flex-col gap-2 sm:gap-3">
+                        <div className="flex flex-col gap-2 sm:gap-3 md:items-center lg:items-start">
                             <h1 className="font-inter font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-black">
                                 <span className="text-purple-600">5-Day</span> Beginner
                                 <br />
                                 <span className="text-purple-600">React.js</span> Bootcamp
                             </h1>
-                            <p className="font-inter font-normal text-base sm:text-lg text-gray-600 max-w-lg">
+                            <p className="font-inter font-normal text-base sm:text-lg text-gray-600 max-w-lg md:mx-auto lg:mx-0">
                                 A hands-on React bootcamp designed for absolute beginners to confidently build, deploy, and understand modern React applications in just 5 days.
                             </p>
                         </div>
 
                         {/* Mobile Form - Shows only on mobile, after heading */}
-                        <div id="registration-form" className="lg:hidden w-full">
+                        <div id="registration-form" className="lg:hidden w-full md:max-w-2xl">
                             <div className="bg-white rounded-xl p-4 shadow-xl border border-gray-100 relative">
                                 {/* Floating React Icon */}
                                 <div className="absolute -top-3 -right-3 bg-white rounded-full p-2 shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
@@ -247,7 +247,7 @@ const HeroVariant2 = () => {
                         </div>
 
                         {/* Features Link - In a pill badge */}
-                        <div className="inline-flex self-start">
+                        <div className="inline-flex self-start md:self-center lg:self-start">
                             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 bg-white/80 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-gray-200">
                                 <span className="font-inter font-medium text-xs sm:text-sm text-purple-600">
                                     Build Real Projects
@@ -265,7 +265,7 @@ const HeroVariant2 = () => {
                         </div>
 
                         {/* Course Features List with floating icon */}
-                        <div className="relative flex flex-col gap-2 sm:gap-3 mt-2">
+                        <div className="relative flex flex-col gap-2 sm:gap-3 mt-2 md:items-center lg:items-start">
                             {courseFeatures.map((feature, index) => (
                                 <div key={index} className="flex items-center gap-2 sm:gap-3">
                                     <feature.icon size={18} className="text-purple-600 flex-shrink-0 sm:w-5 sm:h-5" />
